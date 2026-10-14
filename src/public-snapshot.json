@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "revision": 3,
+  "mode": "demo",
+  "records": [
+    {
+      "kind": "principle",
+      "id": "principle-structure",
+      "title": "围绕垄断、增长与价值捕获开展研究",
+      "body": "理解 TAM、竞争优势、正反馈及失效边界；财务用于验证结构，缺失证据保持未知。",
+      "fields": {
+        "category": "理念依据",
+        "boundary": "适用于能够解释需求空间、竞争优势和价值捕获路径的标的。竞争优势尚未得到证据支持时，保持观察，不把行业增长直接当作公司收益；仓位需结合资金期限、流动性需求和风险承受能力单独确定。"
+      },
+      "source": "本地来源：投资原则.md（原文未随公开快照提供）",
+      "refs": [],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "active",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.357Z"
+    },
+    {
+      "kind": "principle",
+      "id": "principle-directions",
+      "title": "约束与动力分别建立操作原则",
+      "body": "长期垄断增长方向更偏约束，行业兴起的受益方向更偏动力。具体分类需要证据，允许待定或两者兼有。",
+      "fields": {
+        "category": "选股与分类",
+        "boundary": "个人方向设想，不等于对具体标的垄断属性的核验；不预设价格及仓位阈值。"
+      },
+      "source": "本地来源：两个投资方向与操作原则.md（原文未随公开快照提供）",
+      "refs": [],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "active",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.361Z"
+    },
+    {
+      "kind": "principle",
+      "id": "principle-falsify",
+      "title": "对照原逻辑复核新情况",
+      "body": "新情况是在支持还是推翻原来的投资逻辑？价格变化不能单独证明逻辑错误，逻辑失效必须复核。",
+      "fields": {
+        "category": "持续观察",
+        "boundary": "不等于禁止再平衡；长期底仓在逻辑被推翻时如何处理，仍待明确。"
+      },
+      "source": "本地来源：想法收集.md（原文未随公开快照提供）",
+      "refs": [],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "active",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.361Z"
+    },
+    {
+      "kind": "principle",
+      "id": "principle-preparation",
+      "title": "事前有准备，操作有记录，事后可验证",
+      "body": "每次实际操作前在这里讨论，把预案、证据、资金影响及验证条件梳理清楚。实际成交后再记录操作，之后复盘。",
+      "fields": {
+        "category": "个人操作纪律",
+        "boundary": "由本人决定并执行；软件不自动交易，不把意向计作成交，不倒填事前计划。"
+      },
+      "source": "本项目对话：操作前交流、操作关联预案的明确要求",
+      "refs": [],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "active",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.362Z"
+    },
+    {
+      "kind": "asset",
+      "id": "btc",
+      "title": "比特币",
+      "body": "已在个人想法中举例，尚未完成独立标的分析；此档案不代表已持仓。",
+      "fields": {
+        "symbol": "BTC",
+        "aliases": [
+          "比特币",
+          "BTC"
+        ],
+        "direction": "长期垄断增长型（个人设想）",
+        "basis": "接近硬垄断与长期 TAM 的个人假设，尚待证据验证。",
+        "tam": "待研究",
+        "capture": "待研究",
+        "moat": "待研究",
+        "feedback": "待研究",
+        "falsifier": "具体可观察条件待研究",
+        "unknowns": "尚缺独立事实核验、估值及当前持仓信息。",
+        "priceMinor": null
+      },
+      "source": "本地来源：两个投资方向与操作原则.md（原文未随公开快照提供）",
+      "refs": [
+        {
+          "id": "principle-structure",
+          "version": 1
+        },
+        {
+          "id": "principle-directions",
+          "version": 1
+        }
+      ],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.362Z"
+    },
+    {
+      "kind": "plan",
+      "id": "plan-btc",
+      "title": "比特币 · 观察与操作安排草稿",
+      "body": "来自已记录的方向性想法；未给定的价格、数量与仓位不补写。",
+      "fields": {
+        "assetId": "btc",
+        "direction": "长期垄断增长型（个人设想）",
+        "observation": "长期 TAM、垄断约束、增长逻辑及其破坏迹象；具体指标待明确。",
+        "falsifier": "什么证据足以推翻核心逻辑，待研究并讨论。",
+        "buy": "持仓不多时合理价格可建立部分底仓；“不多”和“合理”待明确。",
+        "sell": "上涨后可考虑再平衡并保留底仓；逻辑失效时底仓边界待明确。",
+        "preparation": "先完成标的研究，补充当前资金持仓；实际操作前在对话中讨论。",
+        "reviewAt": null,
+        "checkState": "unmonitored"
+      },
+      "source": "本地来源：两个投资方向与操作原则.md（原文未随公开快照提供）",
+      "refs": [
+        {
+          "id": "btc",
+          "version": 1
+        },
+        {
+          "id": "principle-falsify",
+          "version": 1
+        },
+        {
+          "id": "principle-preparation",
+          "version": 1
+        }
+      ],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.363Z"
+    },
+    {
+      "kind": "asset",
+      "id": "tesla",
+      "title": "Tesla",
+      "body": "已在个人想法中举例，尚未完成独立标的分析；此档案不代表已持仓。",
+      "fields": {
+        "symbol": "TSLA",
+        "aliases": [
+          "Tesla",
+          "TSLA"
+        ],
+        "direction": "长期垄断增长型（个人设想）",
+        "basis": "接近硬垄断与长期 TAM 的个人假设，尚待证据验证。",
+        "tam": "待研究",
+        "capture": "待研究",
+        "moat": "待研究",
+        "feedback": "待研究",
+        "falsifier": "具体可观察条件待研究",
+        "unknowns": "尚缺独立事实核验、估值及当前持仓信息。",
+        "priceMinor": null
+      },
+      "source": "本地来源：两个投资方向与操作原则.md（原文未随公开快照提供）",
+      "refs": [
+        {
+          "id": "principle-structure",
+          "version": 1
+        },
+        {
+          "id": "principle-directions",
+          "version": 1
+        }
+      ],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.363Z"
+    },
+    {
+      "kind": "plan",
+      "id": "plan-tesla",
+      "title": "Tesla · 观察与操作安排草稿",
+      "body": "来自已记录的方向性想法；未给定的价格、数量与仓位不补写。",
+      "fields": {
+        "assetId": "tesla",
+        "direction": "长期垄断增长型（个人设想）",
+        "observation": "长期 TAM、垄断约束、增长逻辑及其破坏迹象；具体指标待明确。",
+        "falsifier": "什么证据足以推翻核心逻辑，待研究并讨论。",
+        "buy": "持仓不多时合理价格可建立部分底仓；“不多”和“合理”待明确。",
+        "sell": "上涨后可考虑再平衡并保留底仓；逻辑失效时底仓边界待明确。",
+        "preparation": "先完成标的研究，补充当前资金持仓；实际操作前在对话中讨论。",
+        "reviewAt": null,
+        "checkState": "unmonitored"
+      },
+      "source": "本地来源：两个投资方向与操作原则.md（原文未随公开快照提供）",
+      "refs": [
+        {
+          "id": "tesla",
+          "version": 1
+        },
+        {
+          "id": "principle-falsify",
+          "version": 1
+        },
+        {
+          "id": "principle-preparation",
+          "version": 1
+        }
+      ],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.364Z"
+    },
+    {
+      "kind": "asset",
+      "id": "spacex",
+      "title": "SpaceX",
+      "body": "已在个人想法中举例，尚未完成独立标的分析；此档案不代表已持仓。",
+      "fields": {
+        "symbol": "SpaceX",
+        "aliases": [
+          "SpaceX",
+          "SpaceX"
+        ],
+        "direction": "长期垄断增长型（个人设想）",
+        "basis": "接近硬垄断与长期 TAM 的个人假设，尚待证据验证。",
+        "tam": "待研究",
+        "capture": "待研究",
+        "moat": "待研究",
+        "feedback": "待研究",
+        "falsifier": "具体可观察条件待研究",
+        "unknowns": "尚缺独立事实核验、估值及当前持仓信息。",
+        "priceMinor": null
+      },
+      "source": "本地来源：两个投资方向与操作原则.md（原文未随公开快照提供）",
+      "refs": [
+        {
+          "id": "principle-structure",
+          "version": 1
+        },
+        {
+          "id": "principle-directions",
+          "version": 1
+        }
+      ],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.365Z"
+    },
+    {
+      "kind": "plan",
+      "id": "plan-spacex",
+      "title": "SpaceX · 观察与操作安排草稿",
+      "body": "来自已记录的方向性想法；未给定的价格、数量与仓位不补写。",
+      "fields": {
+        "assetId": "spacex",
+        "direction": "长期垄断增长型（个人设想）",
+        "observation": "长期 TAM、垄断约束、增长逻辑及其破坏迹象；具体指标待明确。",
+        "falsifier": "什么证据足以推翻核心逻辑，待研究并讨论。",
+        "buy": "持仓不多时合理价格可建立部分底仓；“不多”和“合理”待明确。",
+        "sell": "上涨后可考虑再平衡并保留底仓；逻辑失效时底仓边界待明确。",
+        "preparation": "先完成标的研究，补充当前资金持仓；实际操作前在对话中讨论。",
+        "reviewAt": null,
+        "checkState": "unmonitored"
+      },
+      "source": "本地来源：两个投资方向与操作原则.md（原文未随公开快照提供）",
+      "refs": [
+        {
+          "id": "spacex",
+          "version": 1
+        },
+        {
+          "id": "principle-falsify",
+          "version": 1
+        },
+        {
+          "id": "principle-preparation",
+          "version": 1
+        }
+      ],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.366Z"
+    },
+    {
+      "kind": "asset",
+      "id": "circle",
+      "title": "Circle",
+      "body": "已在个人想法中举例，尚未完成独立标的分析；此档案不代表已持仓。",
+      "fields": {
+        "symbol": "CRCL",
+        "aliases": [
+          "Circle",
+          "CRCL"
+        ],
+        "direction": "增长动力型（个人设想）",
+        "basis": "行业兴起及标的受益的动力假设，尚待证据验证。",
+        "tam": "待研究",
+        "capture": "待研究",
+        "moat": "待研究",
+        "feedback": "待研究",
+        "falsifier": "具体可观察条件待研究",
+        "unknowns": "尚缺独立事实核验、估值及当前持仓信息。",
+        "priceMinor": null
+      },
+      "source": "本地来源：两个投资方向与操作原则.md（原文未随公开快照提供）",
+      "refs": [
+        {
+          "id": "principle-structure",
+          "version": 1
+        },
+        {
+          "id": "principle-directions",
+          "version": 1
+        }
+      ],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.367Z"
+    },
+    {
+      "kind": "plan",
+      "id": "plan-circle",
+      "title": "Circle · 观察与操作安排草稿",
+      "body": "来自已记录的方向性想法；未给定的价格、数量与仓位不补写。",
+      "fields": {
+        "assetId": "circle",
+        "direction": "增长动力型（个人设想）",
+        "observation": "行业增长动力、公司价值捕获与动力减弱信号；具体指标待明确。",
+        "falsifier": "什么证据足以推翻核心逻辑，待研究并讨论。",
+        "buy": "要求更高安全边际与更低价格；具体条件待明确。",
+        "sell": "涨得过多时可考虑减持或退出；具体条件待明确。",
+        "preparation": "先完成标的研究，补充当前资金持仓；实际操作前在对话中讨论。",
+        "reviewAt": null,
+        "checkState": "unmonitored"
+      },
+      "source": "本地来源：两个投资方向与操作原则.md（原文未随公开快照提供）",
+      "refs": [
+        {
+          "id": "circle",
+          "version": 1
+        },
+        {
+          "id": "principle-falsify",
+          "version": 1
+        },
+        {
+          "id": "principle-preparation",
+          "version": 1
+        }
+      ],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "opinion",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.368Z"
+    },
+    {
+      "kind": "evidence",
+      "id": "account-history",
+      "title": "美股账户历史投资记录 · 虚构示例",
+      "body": "# 美股账户历史投资记录（虚构）\n\n以下日期、金额和账户情境均为虚构，仅用于展示记录方式，不代表任何人的真实资产或投资业绩。币种：美元（USD）。\n\n| 日期 | 金额（USD） | 记录性质 |\n|---|---:|---|\n| 2021-03-15 | 10,000 | 虚构首次转入资金 |\n| 2022-01-01 | 11,800 | 虚构账户总资产 |\n| 2023-01-01 | 9,600 | 虚构账户总资产 |\n| 2024-01-01 | 14,200 | 虚构账户总资产 |\n| 2025-01-01 | 17,500 | 虚构账户总资产 |\n\n本示例未提供完整资金流、费用及分红，不据此计算收益率。历史金额不计入当前资金或持仓。",
+      "fields": {
+        "assetId": "",
+        "stance": "neutral",
+        "locator": "公开版虚构示例",
+        "publishedAt": "2026-10-12T00:00:00.000Z",
+        "dataPeriod": "2021-03 至 2025-01（虚构）",
+        "verified": false
+      },
+      "source": "软件展示用虚构数据；不对应真实账户",
+      "refs": [],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "inference",
+      "version": 1,
+      "recordedAt": "2026-10-14T08:02:34.369Z"
+    },
+    {
+      "kind": "evidence",
+      "id": "account-history",
+      "title": "美股账户历史投资记录 · 虚构示例",
+      "body": "# 美股账户历史投资记录（虚构）\n\n以下日期、金额和账户情境均为虚构，仅用于展示记录方式，不代表任何人的真实资产或投资业绩。币种：美元（USD）。\n\n| 日期 | 金额（USD） | 记录性质 |\n|---|---:|---|\n| 2021-03-15 | 10,000 | 虚构首次转入资金 |\n| 2022-01-01 | 11,800 | 虚构账户总资产 |\n| 2023-01-01 | 9,600 | 虚构账户总资产 |\n| 2024-01-01 | 14,200 | 虚构账户总资产 |\n| 2025-01-01 | 17,500 | 虚构账户总资产 |\n\n本示例未提供完整资金流、费用及分红，不据此计算收益率。历史金额不计入当前资金或持仓。",
+      "fields": {
+        "assetId": "",
+        "stance": "neutral",
+        "locator": "公开版虚构示例",
+        "publishedAt": "2026-10-12T00:00:00.000Z",
+        "dataPeriod": "2021-03 至 2025-01（虚构）",
+        "verified": false
+      },
+      "source": "软件展示用虚构数据；不对应真实账户",
+      "refs": [],
+      "date": "2026-10-14T00:00:00.000Z",
+      "status": "draft",
+      "identity": "inference",
+      "version": 2,
+      "recordedAt": "2026-10-14T11:10:16.706Z"
+    }
+  ],
+  "audit": [
+    {
+      "revision": 1,
+      "at": "2026-10-14T08:02:34.369Z",
+      "reason": "根据已记录个人原则及方向性想法建立首版；未导入任何假设资金或成交"
+    },
+    {
+      "revision": 2,
+      "at": "2026-10-14T11:10:16.707Z",
+      "reason": "更正账户称谓为美股账户"
+    },
+    {
+      "revision": 3,
+      "at": "2026-10-14T11:11:04.921Z",
+      "reason": "公开账户历史及其所有展示版本改为虚构示例"
+    }
+  ]
+}
