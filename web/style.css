@@ -108,6 +108,17 @@ td small{display:block;font-size:13px;color:var(--text-secondary);margin-top:5px
 .workflow-strip{display:flex;justify-content:space-between;gap:12px;padding:18px 3px;color:var(--text-secondary);font-size:13px}
 .workflow-strip b{font-weight:400;color:var(--text-secondary)}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.method-list{padding:0 28px}
+.method-row{display:grid;grid-template-columns:190px minmax(0,1fr);gap:28px;padding:26px 0;border-bottom:1px solid var(--border)}
+.method-row:last-child{border-bottom:0}
+.method-heading h2{margin:0 0 4px}
+.method-heading p{margin:0;color:var(--text-secondary);font-size:13px}
+.method-entry+.method-entry{border-top:1px solid var(--border);margin-top:20px;padding-top:20px}
+.method-entry-title{display:flex;align-items:baseline;gap:12px;font-size:16px;font-weight:600}
+.method-entry-title span{color:var(--text-secondary);font-size:12px;font-weight:400}
+.method-entry p{margin:6px 0 0;line-height:1.75}
+.method-boundary,.method-pending{color:var(--text-secondary);font-size:13px}
+.method-pending{margin:2px 0}
 .card-kicker{font-size:13px;color:var(--text-secondary);letter-spacing:1px;margin-bottom:13px}
 .principle-card>p{font-size:15px;line-height:1.9}
 .text-block{padding:10px 0;min-width:0}
@@ -204,6 +215,8 @@ h1{font-size:25px}
 .stat:nth-child(2){border-right:0}
 .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
 .panel{padding:20px 18px}
+.method-list{padding:0 18px}
+.method-row{grid-template-columns:1fr;gap:12px;padding:20px 0}
 .plan-grid,.analysis-grid{grid-template-columns:1fr}
 .workflow-strip{flex-wrap:wrap;justify-content:center}
 .tabs{gap:16px;overflow-x:auto}
@@ -271,6 +284,7 @@ td {border-color:var(--border)} td small {font-size:12px} tbody tr:hover {backgr
 .operations-guide {background:var(--surface-raised);color:var(--text-secondary);border:1px solid var(--border);border-radius:8px}
 .tabs {border-color:var(--border)}.tabs a {font-size:14px}.tabs a[aria-current] {border-bottom-color:var(--accent);color:var(--accent-hover)}
 .source-line a,summary,.back-link {color:var(--accent-hover)}
+.figure {display:block;width:100%;height:auto;margin:4px 0 20px;border:1px solid var(--border);border-radius:8px;background:var(--surface-inset)}
 .empty-mark {background:var(--surface-raised);color:var(--accent)}
 dialog {background:var(--surface-panel);color:var(--text-primary);border-color:var(--border-strong);border-radius:10px}
 dialog textarea {background:var(--surface-base);color:var(--text-primary);font-size:14px}

@@ -17,7 +17,7 @@ export function validDate(v:unknown,n='date'){text(v,n);need(/^\d{4}-\d{2}-\d{2}
 function shape(o:any,allowed:string[],name:string){need(o&&typeof o==='object'&&!Array.isArray(o),`${name} 必须为对象`);for(const k of Object.keys(o))need(allowed.includes(k),`${name} 未知字段 ${k}`);}
 const fieldKeys:Record<Kind,string[]>={
  principle:['category','boundary'],asset:['symbol','aliases','direction','basis','tam','capture','moat','feedback','falsifier','unknowns','priceMinor','currency','priceDate'],
- evidence:['assetId','stance','locator','publishedAt','dataPeriod','verified'],plan:['assetId','direction','observation','falsifier','buy','sell','preparation','reviewAt','checkState'],
+ evidence:['assetId','stance','locator','publishedAt','dataPeriod','verified','figure'],plan:['assetId','direction','observation','falsifier','buy','sell','preparation','reviewAt','checkState'],
  decision:['assetId','plan','action','discussionAt','rationale','validation','missingPreparation'],account:['currency','cashMinor','holdingsKnown','positions'],
  flow:['accountId','amountMinor','reason'],trade:['accountId','assetId','plan','decision','side','quantity','priceMinor','feeMinor','missingPreparation'],
  review:['target','judgment','execution','outcome','next']};

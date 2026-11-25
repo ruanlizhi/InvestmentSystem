@@ -13,9 +13,24 @@ export function handler(dir:string,port:number,load:()=>State=()=>readState(dir)
   if(req.headers.get('sec-fetch-site')==='cross-site')return json({error:'Cross-site request blocked'},403);
   if(url.pathname==='/api/state'){const s=load();return json({...s,portfolio:portfolio(s)});}
   if(url.pathname==='/api/summary')return json({text:discussion(load(),url.searchParams.get('id')??'')});
+  const analysis:Record<string,string>={'/analysis':'index.html','/analysis.css':'analysis.css','/analysis.js':'analysis.js'};
+  const analysisFile=analysis[url.pathname];
+  if(analysisFile){if(!dir)return json({error:'Not found'},404);const file=join(dir,'analysis',analysisFile);if(!existsSync(file))return json({error:'Not found'},404);return new Response(Bun.file(file),{headers});}
+  if(url.pathname.startsWith('/figures/')){
+   if(!dir)return json({error:'Not found'},404);
+   let name:string;try{name=decodeURIComponent(url.pathname.slice('/figures/'.length));}catch{return json({error:'Not found'},404);}
+   if(!/^[A-Za-z0-9][A-Za-z0-9._\-一-鿿]*\.svg$/.test(name))return json({error:'Not found'},404);
+   const file=join(dir,'figures',name);
+   if(!existsSync(file))return json({error:'Not found'},404);
+   return new Response(Bun.file(file),{headers:{...headers,'Content-Type':'image/svg+xml'}});
+  }
   const assets:Record<string,string>={'/':'index.html','/app.js':'app.js','/style.css':'style.css','/favicon.svg':'favicon.svg'};
   const f=assets[url.pathname];if(!f)return json({error:'Not found'},404);return new Response(Bun.file(join(projectRoot,'dist',f)),{headers});
  }catch{return json({error:'读取失败：请在本机使用 CLI 检查工作区；不会覆盖现有数据。'},500);}};
+}
+function openBrowser(url:string){
+ const cmd=process.platform==='win32'?['cmd','/c','start','',url]:process.platform==='darwin'?['open',url]:existsSync('/mnt/c/Windows/explorer.exe')?['/mnt/c/Windows/explorer.exe',url]:['xdg-open',url];
+ try{Bun.spawn({cmd,stdin:'ignore',stdout:'ignore',stderr:'ignore'});}catch{/* 打开浏览器失败不影响服务 */ }
 }
 if(import.meta.main){
  try{const args=process.argv.slice(2);const i=args.indexOf('--workspace'),p=args.indexOf('--port');const demo=args.includes('--demo');
@@ -25,6 +40,6 @@ if(import.meta.main){
  const s=demo?publicState():readState(dir);need(demo?s.mode==='demo':s.mode==='personal','模式不匹配');
  need(existsSync(join(projectRoot,'dist','app.js')),'请先运行 bun run build');
  const port=p>=0?Number(args[p+1]):demo?4318:4317;need(Number.isInteger(port)&&port>1024&&port<65536,'port 无效');
- Bun.serve({hostname:'127.0.0.1',port,fetch:handler(dir,port,demo?publicState:()=>readState(dir))});console.log(`InvestmentSystem ${s.mode} · http://localhost:${port}`);
+ Bun.serve({hostname:'127.0.0.1',port,fetch:handler(dir,port,demo?publicState:()=>readState(dir))});const url=`http://localhost:${port}`;console.log(`InvestmentSystem ${s.mode} · ${url}`);if(args.includes('--open'))openBrowser(url);
  }catch(e){console.error(e instanceof Error?e.message:e);process.exitCode=1;}
 }
