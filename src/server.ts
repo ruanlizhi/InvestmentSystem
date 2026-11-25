@@ -1,5 +1,5 @@
 import {join} from 'node:path';
-import {existsSync} from 'node:fs';
+import {existsSync,readFileSync} from 'node:fs';
 import {projectRoot,workspacePath,readState} from './store';
 import {portfolio,discussion,need,type State} from './model';
 import {publicState} from './public';
@@ -13,6 +13,12 @@ export function handler(dir:string,port:number,load:()=>State=()=>readState(dir)
   if(req.headers.get('sec-fetch-site')==='cross-site')return json({error:'Cross-site request blocked'},403);
   if(url.pathname==='/api/state'){const s=load();return json({...s,portfolio:portfolio(s)});}
   if(url.pathname==='/api/summary')return json({text:discussion(load(),url.searchParams.get('id')??'')});
+  if(url.pathname==='/api/strategy'){
+   if(!dir)return json({error:'Not found'},404);
+   const file=join(dir,'strategy.json');
+   if(!existsSync(file))return json({error:'尚未提供策略文件 strategy.json'},404);
+   try{const s=JSON.parse(readFileSync(file,'utf8'));need(s&&typeof s==='object'&&s.schemaVersion===1&&Array.isArray(s.assets)&&Array.isArray(s.executions),'策略文件格式无效');return json(s);}catch(e){return json({error:'策略文件读取失败：'+String((e as Error).message)},500);}
+  }
   const analysis:Record<string,string>={'/analysis':'index.html','/analysis.css':'analysis.css','/analysis.js':'analysis.js'};
   const analysisFile=analysis[url.pathname];
   if(analysisFile){if(!dir)return json({error:'Not found'},404);const file=join(dir,'analysis',analysisFile);if(!existsSync(file))return json({error:'Not found'},404);return new Response(Bun.file(file),{headers});}
