@@ -26,9 +26,9 @@ export function validateStrategy(x:any):void{
  need(x.schemaVersion===1,'策略文件版本无效');
  text(x.title,'title');text(x.currency,'currency');need(currencies.includes(x.currency),'币种无效');text(x.updatedAt,'updatedAt');
  need(Array.isArray(x.assets)&&x.assets.length<=50,'assets 无效');
- for(const a of x.assets){need(a&&typeof a==='object','asset 必须是对象');text(a.assetId,'assetId');num(a.totalMinor,'totalMinor',0,true);num(a.trancheMinor,'trancheMinor',0,true);num(a.tranches,'tranches',1,true);text(a.trigger,'trigger');}
+ for(const a of x.assets){need(a&&typeof a==='object','asset 必须是对象');text(a.assetId,'assetId');need(/^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$/.test(a.assetId),'assetId 无效');num(a.totalMinor,'totalMinor',0,true);num(a.trancheMinor,'trancheMinor',0,true);num(a.tranches,'tranches',1,true);text(a.trigger,'trigger');}
  need(Array.isArray(x.executions)&&x.executions.length<=2000,'executions 无效');
- for(const e of x.executions){need(e&&typeof e==='object','execution 必须是对象');text(e.date,'date');need(/^\d{4}-\d{2}-\d{2}$/.test(e.date),'date 使用 YYYY-MM-DD');text(e.type,'type');text(e.assetId,'assetId');need(['buy','sell'].includes(e.side),'side 无效');num(e.quantity,'quantity',0,false);num(e.priceMinor,'priceMinor',0,true);num(e.amountMinor,'amountMinor',0,true);for(const k of ['btcMinor','ethMinor'])if(e[k]!=null)num(e[k],k,0,true);if(e.tradeId!=null)text(e.tradeId,'tradeId');if(e.note!=null)text(e.note,'note',true);}
+ for(const e of x.executions){need(e&&typeof e==='object','execution 必须是对象');text(e.date,'date');need(/^\d{4}-\d{2}-\d{2}$/.test(e.date),'date 使用 YYYY-MM-DD');text(e.type,'type');text(e.assetId,'assetId');need(/^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$/.test(e.assetId),'assetId 无效');need(['buy','sell'].includes(e.side),'side 无效');num(e.quantity,'quantity',0,false);num(e.priceMinor,'priceMinor',0,true);num(e.amountMinor,'amountMinor',0,true);for(const k of ['btcMinor','ethMinor'])if(e[k]!=null)num(e[k],k,0,true);if(e.tradeId!=null)text(e.tradeId,'tradeId');if(e.note!=null)text(e.note,'note',true);}
  if(x.notes!=null)need(Array.isArray(x.notes)&&x.notes.every((n:any)=>typeof n==='string'),'notes 无效');
 }
 export function validateInput(x:any):asserts x is RecordInput{
