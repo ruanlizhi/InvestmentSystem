@@ -1,7 +1,7 @@
 import {join} from 'node:path';
 import {existsSync,readFileSync} from 'node:fs';
 import {projectRoot,workspacePath,readState} from './store';
-import {portfolio,discussion,need,type State} from './model';
+import {portfolio,discussion,need,validateStrategy,type State} from './model';
 import {publicState} from './public';
 export function handler(dir:string,port:number,load:()=>State=()=>readState(dir)){
  const headers={'Cache-Control':'no-store','CDN-Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"};
@@ -17,7 +17,7 @@ export function handler(dir:string,port:number,load:()=>State=()=>readState(dir)
    if(!dir)return json({error:'Not found'},404);
    const file=join(dir,'strategy.json');
    if(!existsSync(file))return json({error:'尚未提供策略文件 strategy.json'},404);
-   try{const s=JSON.parse(readFileSync(file,'utf8'));need(s&&typeof s==='object'&&s.schemaVersion===1&&Array.isArray(s.assets)&&Array.isArray(s.executions),'策略文件格式无效');return json(s);}catch(e){return json({error:'策略文件读取失败：'+String((e as Error).message)},500);}
+   try{const s=JSON.parse(readFileSync(file,'utf8'));validateStrategy(s);return json(s);}catch(e){return json({error:'策略文件读取失败：'+String((e as Error).message)},500);}
   }
   const analysis:Record<string,string>={'/analysis':'index.html','/analysis.css':'analysis.css','/analysis.js':'analysis.js'};
   const analysisFile=analysis[url.pathname];
